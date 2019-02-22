@@ -1,0 +1,12 @@
+---
+version: 5
+defaults:
+  :data_hash: 'yaml_data'
+  :datadir: '/vagrant/puppet/hieradata'
+
+hierarchy:
+  - name: 'Role specific data'
+    path: "%{::role}.yaml"
+
+  - name: 'Common data'
+    path: 'common.yaml'

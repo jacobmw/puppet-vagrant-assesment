@@ -1,0 +1,6 @@
+forge "https://forgeapi.puppetlabs.com"
+
+# Some useful modules
+mod 'bashtoni-timezone'
+mod 'puppetlabs-firewall'
+mod 'stahnma-epel'

@@ -1,0 +1,9 @@
+.tmp/
+.librarian/
+.vagrant/
+app/go-service
+.DS_Store
+puppet/modules/*
+
+!.gitignore
+!.gitkeep
