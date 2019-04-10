@@ -7,12 +7,10 @@ When you are done, commit your changes and share your repo
 
 ## Software Required
 
-You will need to install Vagrant and either Docker or Virtualbox to run the  
-technical assessment. If you have trouble with Docker then try Virtualbox  
-instead.
+You will need to install Vagrant and Virtualbox to run the technical assessment. If you have the vagrant plugin 'vagrant-vbguest' installed, you should remove that first to speed things up.
 
-[Git](https://git-scm.com/)  
-[Vagrant](https://www.vagrantup.com)  
+[Git](https://git-scm.com/)
+[Vagrant](https://www.vagrantup.com)
 [Virtualbox](https://www.virtualbox.org/)
 
 ## Overview

@@ -20,6 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
 
       config.vm.hostname = node_name
+      config.ssh.insert_key = false
       config.vm.network :private_network, ip: node_config['ip']
       config.vm.synced_folder "puppet/hieradata", "/tmp/vagrant-puppet/hieradata"
       config.vm.provider :virtualbox do |vb|

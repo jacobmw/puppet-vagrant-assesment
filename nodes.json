@@ -1,11 +1,11 @@
 {
     "nodes": {
-        "app": {
+        "assessment": {
           "ip": "192.168.100.10",
           "ports": [
             {
               "host": 8080,
-              "guest": 8080,
+              "guest": 9999,
               "id": "app-1"
             }
           ],
