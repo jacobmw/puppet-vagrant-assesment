@@ -1,6 +1,10 @@
 # Run the "webapp"
 class profiles::go_webapp::run {
-  exec {'run-go_webapp':
-    command => '/vagrant/app/go-webapp &',
-  }
+  service { "gowebapp":
+  	ensure  => running,
+  	enable => true,
+  	start => '/vagrant/app/gowebapp.sh start',
+  	stop => '/vagrant/app/gowebapp.sh stop',
+  	status => '/vagrant/app/gowebapp.sh status',
+ }
 }
