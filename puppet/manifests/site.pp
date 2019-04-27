@@ -26,3 +26,10 @@ END
 class { 'motd':
 	content => inline_epp($motd_template,)
 }
+
+exec 
+{ 
+    'yum update':
+    	path    => '/usr/bin',
+        command => 'yum update -y',
+}
