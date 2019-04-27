@@ -4,3 +4,4 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'bashtoni-timezone'
 mod 'puppetlabs-firewall'
 mod 'stahnma-epel'
+mod 'puppetlabs-motd', '2.1.2'
