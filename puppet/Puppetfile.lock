@@ -4,12 +4,19 @@ FORGE
     bashtoni-timezone (1.0.0)
     puppetlabs-firewall (1.12.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
+    puppetlabs-motd (2.1.2)
+      puppetlabs-registry (< 3.0.0, >= 1.0.0)
+      puppetlabs-stdlib (< 6.0.0, >= 2.1.0)
+      puppetlabs-translate (< 2.0.0, >= 1.0.0)
+    puppetlabs-registry (2.1.0)
     puppetlabs-stdlib (4.25.1)
+    puppetlabs-translate (1.2.0)
     stahnma-epel (1.3.0)
       puppetlabs-stdlib (>= 3.0.0)
 
 DEPENDENCIES
   bashtoni-timezone (>= 0)
   puppetlabs-firewall (>= 0)
+  puppetlabs-motd (= 2.1.2)
   stahnma-epel (>= 0)
 
