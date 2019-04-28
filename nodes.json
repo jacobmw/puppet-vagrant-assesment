@@ -5,7 +5,7 @@
           "ports": [
             {
               "host": 8080,
-              "guest": 9999,
+              "guest": 8484,
               "id": "app-1"
             }
           ],
