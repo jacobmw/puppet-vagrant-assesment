@@ -75,5 +75,17 @@ Add some form of logging of requests.
 ## Other considerations for disscussion / thinking about
 
 How would you make sure the application is secure, is there anything in particular to
-worry about? How would you know if the app was working or not? What would you change or
+worry about? 
+
+Updates on OS. Need patches for security vulnerabilities etc.
+Firewall is disabled. Need to set restricted rules.
+
+
+How would you know if the app was working or not? 
+Need a script to confirm status. Build should run some sanity tests.
+
+What would you change or
 advise the potential client or dev team to change or think about?
+Firewall, yum updates, go modules for dependency pulling... building binary ahead of time and just providing a tar or gzip with the binary
+Have the application run through a docker image and run it on the instance with the appropriate network config
+
