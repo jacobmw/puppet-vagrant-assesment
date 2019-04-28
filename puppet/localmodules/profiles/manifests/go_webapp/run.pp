@@ -24,4 +24,10 @@ WantedBy=multi-user.target",
     ensure    => 'running',
     subscribe => File['/usr/lib/systemd/system/gowebapp.service'],
   }
+  
+  exec {'enable-service-go_webapp':
+    command => 'systemctl enable gowebapp',
+    path    => ['/usr/bin', '/usr/sbin'],
+    unless  => 'stat /etc/systemd/system/multi-user.target.wants/gowebapp.service',
+  }
 }
