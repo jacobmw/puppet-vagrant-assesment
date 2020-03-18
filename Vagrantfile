@@ -3,8 +3,7 @@ NODES = (JSON.parse(File.read("nodes.json")))['nodes']
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'ben-cts/centos-7'
-  config.vm.box_version = '0.0.4'
+  config.vm.box = 'centos/7'
 
   NODES.each do |node|
     node_name = node[0]
@@ -20,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
 
       config.vm.hostname = node_name
-      config.ssh.insert_key = false
+      config.ssh.insert_key = true
       config.vm.network :private_network, ip: node_config['ip']
       config.vm.synced_folder "puppet/hieradata", "/tmp/vagrant-puppet/hieradata"
       config.vm.provider :virtualbox do |vb|
@@ -28,8 +27,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.customize ["modifyvm", :id, "--name", node_name]
       end
 
+      config.vm.provision "shell", path: "bootstrap.sh"
       config.vm.provision "shell",
-        inline: "sed -i '3 i nameserver 8.8.8.8' /etc/resolv.conf && cd /vagrant/puppet/ && /opt/puppetlabs/puppet/bin/librarian-puppet install"
+        inline: "sed -i '3 i nameserver 8.8.8.8' /etc/resolv.conf && cd /vagrant/puppet/ && /usr/local/bin/librarian-puppet install"
 
       config.vm.provision "puppet" do |puppet|
         puppet.options = "--test"
